@@ -6,6 +6,8 @@
 #' @return a data frame
 #' @export
 read_gps <- function(gps_file,to_lower = TRUE) {
+  stopifnot(require("readr"))
+  stopifnot(require("dplyr"))
   gps_lines <- readr::read_lines(file = gps_file)
   
   blank_rows <- function(gps_list) {

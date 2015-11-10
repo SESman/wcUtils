@@ -6,6 +6,8 @@
 #' @return a data frame
 #' @export
 read_locs <- function(loc_file,to_lower = TRUE) {
+  stopifnot(require("readr"))
+  stopifnot(require("dplyr"))
   loc_lines <- readr::read_lines(file = loc_file)
   
   blank_rows <- function(loc_list) {
